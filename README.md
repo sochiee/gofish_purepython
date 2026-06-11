@@ -18,15 +18,15 @@ $$
 Encontramos el gradiente de E e igualamos a cero para encontrar el minimo global.
 
 $$
-\nabla E(\beta) = 2 X ^T X \beta - 2 X^T \beta
+\nabla E(\beta) = 2 X ^T X \beta - 2 X^T y
 $$
 
 
 $$
 \begin{align*}
      & \nabla E(\beta) = 0 \\
-\iff & 2 X ^T X \beta - 2 X^T \beta = 0 \\
-\iff & 2 X ^T X \beta = 2 X^T \beta
+\iff & 2 X ^T X \beta - 2 X^T y = 0 \\
+\iff & X ^T X \beta = X^T y
 \end{align*}
 $$
 
