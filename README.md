@@ -10,6 +10,7 @@ $$
 \begin{align*}
 \implies E(x) &= \sum_{i=1}^n (y_i - x_i^T \beta)^2 \\
               &= \lVert y - X \beta \rVert ^2 
+              &= (y-X \beta)^T (y-X \beta)
 \end{align*}
 $$ 
 
