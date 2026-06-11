@@ -41,7 +41,7 @@ $$
 \end{align*}
 $$
 
-Como R es una matriz triangular superior, es un sismeta de ecuaciones facil de resolver. 
+Como R es una matriz triangular superior, es un sistema de ecuaciones facil de resolver. 
 
 
 
