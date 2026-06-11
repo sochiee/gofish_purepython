@@ -30,6 +30,19 @@ $$
 \end{align*}
 $$
 
+Aquí podemos hacer dos cosas, si existe la inversa $$(X^T X)^-1$$ tenemos una solución para $$\beta$$. Sin embargo, encontrar la inversa de una matriz cuyas propiedades no conocemos puede ser dificil, por lo que utilizamos la descomposición QR.
+
+$$
+\begin{align*}
+& X = QR
+\iff & (QR)^T QR \beta = (QR)^T y  
+\iff & R^T R \beta = R^T Q^T y  
+\iff & R \beta = Q^T y  
+\end{align*}
+$$
+
+Como R es una matriz triangular superior, es un sismeta de ecuaciones facil de resolver. 
+
 
 
 
