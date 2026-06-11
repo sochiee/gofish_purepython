@@ -8,7 +8,7 @@ Utilizando notación matricial. Podemos ver a y_i como vectores
 
 $$
 \begin{align*}
-\implies & E(x) = \sum_{i=1}^n (y - x_i^T \beta)^2
+\implies & E(x) = \sum_{i=1}^n (y_i - x_i^T \beta_i)^2
 \end{align*}
 $$ 
 
