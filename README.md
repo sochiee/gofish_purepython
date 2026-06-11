@@ -11,7 +11,7 @@ $$
 \implies E(x) &= \sum_{i=1}^n (y_i - x_i^T \beta)^2 \\
               &= \lVert y - X \beta \rVert ^2 \\
               &= (y - X \beta)^T ( y - X \beta) \\
-              &= y^T y - \beta^T X^T y - \beta^T - y^T X \beta + \beta^T X^T X \beta 
+              &= y^T y - \beta^T X^T y - y^T X \beta + \beta^T X^T X \beta 
 \end{align*}
 $$ 
 
