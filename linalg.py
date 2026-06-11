@@ -57,8 +57,6 @@ def gram_schmidt(column_vecs: list[list[float]]) -> list[list[float]]:
 
 def qr(matrix: list[list[float]]) -> list[list[list[float]]]:
     """Descomposición QR de una matriz usando el metodo de Gram-Schmidt"""
-    n = len(matrix)
-
     columnas = transpose(matrix)
     orthonormal_cols = gram_schmidt(columnas)
 
@@ -67,10 +65,12 @@ def qr(matrix: list[list[float]]) -> list[list[list[float]]]:
 
     r = matmul(qt, matrix)
 
-    # Limpieza numerica
-    for i in range(n):
-        for j in range(i):
-            if abs(r[i][j]) < 1e-10:
+    no_cols_r = len(r)
+    no_rows_r = len(r[0])
+
+    for i in range(no_rows_r):
+        for j in range(no_cols_r):
+            if r[i][j] <= 1e-10 and j < i:
                 r[i][j] = 0.0
 
     return [q, r]
@@ -97,5 +97,20 @@ def linear_solver(
     return x
 
 
+def matrix_to_str(matrix: list[list[float]]) -> str:
+    """Convierte una matriz a texto formateado con columnas alineadas."""
+    s = [[str(e) for e in row] for row in matrix]
+    lens = [max(map(len, col)) for col in zip(*s)]
+    fmt = "\t".join("{{:{}}}".format(x) for x in lens)
+    table = [fmt.format(*row) for row in s]
+    return "\n".join(table)
+
+
 if __name__ == "__main__":
-    ...
+    A = [[1, 2], [3, 4], [5, 6]]
+    Q, R = qr(A)
+    print(matrix_to_str(Q))
+    print(matrix_to_str(R))
+
+    check = matmul(Q, R)
+    print(matrix_to_str(check))
