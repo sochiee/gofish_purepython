@@ -9,7 +9,7 @@ Utilizando notación matricial.
 $$
 \begin{align*}
 \implies & E(x) = \sum_{i=1}^n (y_i - x_i^T \beta_i)^2 \\
-\iff     & E(x) = \lVert 
+\iff     & E(x) = \lVert y = X \beta \rVert ^2 
 \end{align*}
 $$ 
 
