@@ -24,8 +24,9 @@ $$
 
 $$
 \begin{align*}
-      & \nabla E(\beta) = 0 \\
-\iff  & 2 X ^T X \beta - 2 X^T \beta = 0 \\
+     & \nabla E(\beta) = 0 \\
+\iff & 2 X ^T X \beta - 2 X^T \beta = 0 \\
+\iff & 2 X ^T X \beta = 2 X^T \beta
 \end{align*}
 $$
 
