@@ -30,7 +30,7 @@ $$
 \end{align*}
 $$
 
-Aquí podemos hacer dos cosas, si existe la inversa $$(X^T X)^-1$$ tenemos una solución para $$\beta$$. Sin embargo, encontrar la inversa de una matriz cuyas propiedades no conocemos puede ser dificil, por lo que utilizamos la descomposición QR.
+Aquí podemos hacer dos cosas, si existe la inversa $$(X^T X)^{-1}$$ tenemos una solución para $$\beta$$. Sin embargo, encontrar la inversa de una matriz cuyas propiedades no conocemos puede ser dificil, por lo que utilizamos la descomposición QR.
 
 $$
 \begin{align*}
