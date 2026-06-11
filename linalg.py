@@ -1,6 +1,6 @@
 def dot(x: list[float], y: list[float]) -> float:
     """Producto punto entre dos vectores x, y"""
-    return sum(xi + yi for xi, yi in zip(x, y))
+    return sum(xi * yi for xi, yi in zip(x, y))
 
 
 def transpose(matrix: list[list[float]]) -> list[list[float]]:
@@ -35,3 +35,67 @@ def proj(vector_u: list[float], vector_v: list[float]) -> list[float]:
 def normalize(vector_v: list[float]) -> list[float]:
     """Normaliza un vector v"""
     return [vi / norm(vector_v) for vi in vector_v]
+
+
+def gram_schmidt(column_vecs: list[list[float]]) -> list[list[float]]:
+    """Aplica Gram-Schmidt a una lista de vectores"""
+    orthogonal_u = []
+
+    for vector in column_vecs:
+        u = vector
+
+        for u_k in orthogonal_u:
+            p = proj(vector, u_k)
+            u = [ui - pi for ui, pi in zip(u, p)]
+
+        orthogonal_u.append(u)
+
+    orthonormal_e = [normalize(u) for u in orthogonal_u]
+
+    return orthonormal_e
+
+
+def qr(matrix: list[list[float]]) -> list[list[list[float]]]:
+    """Descomposición QR de una matriz usando el metodo de Gram-Schmidt"""
+    n = len(matrix)
+
+    columnas = transpose(matrix)
+    orthonormal_cols = gram_schmidt(columnas)
+
+    q = transpose(orthonormal_cols)
+    qt = transpose(q)
+
+    r = matmul(qt, matrix)
+
+    # Limpieza numerica
+    for i in range(n):
+        for j in range(i):
+            if abs(r[i][j]) < 1e-10:
+                r[i][j] = 0.0
+
+    return [q, r]
+
+
+def linear_solver(
+    coef_matrix: list[list[float]], con_vector: list[float]
+) -> list[float]:
+    """Resuelve un sistema de ecuaciones lineales de la forma Ax=b"""
+    n = len(coef_matrix[0])
+
+    q, r = qr(coef_matrix)
+    qt = transpose(q)
+    qtb = matvec(qt, con_vector)[:n]
+
+    x = [0.0] * n
+
+    for i in range(n - 1, -1, -1):
+        sum = 0.0
+        for j in range(i + 1, n):
+            sum += r[i][j] * x[j]
+        x[i] = (qtb[i] - sum) / r[i][i]
+
+    return x
+
+
+if __name__ == "__main__":
+    ...
