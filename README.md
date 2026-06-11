@@ -15,6 +15,16 @@ $$
 \end{align*}
 $$ 
 
+Encontramos el gradiente de E e igualamos a cero para encontrar el minimo global.
+
+$$
+\begin{align*}
+\nabla E(\beta) = 2 X ^T X \beta - 2 X^T \beta
+\end{align*}
+$$
+
+
+
 
 
 
