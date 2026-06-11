@@ -34,9 +34,9 @@ Aquí podemos hacer dos cosas, si existe la inversa $$(X^T X)^-1$$ tenemos una s
 
 $$
 \begin{align*}
-& X = QR
-\iff & (QR)^T QR \beta = (QR)^T y  
-\iff & R^T R \beta = R^T Q^T y  
+& X = QR \\
+\iff & (QR)^T QR \beta = (QR)^T y \\  
+\iff & R^T R \beta = R^T Q^T y \\  
 \iff & R \beta = Q^T y  
 \end{align*}
 $$
