@@ -1,4 +1,4 @@
-from data import read_csv_cols
+from data import read_csv_cols, write_csv
 from linear_regression import calc_error, olr, pearson
 from linalg import linear_solver, transpose
 
@@ -33,3 +33,8 @@ if __name__ == "__main__":
 
     print(f"error lineal: {error_lineal}")
     print(f"error polinomial: {multilineal_error}")
+
+    write_csv(
+        "data/aproximaciones.csv",
+        [longitudes_cubo, pesos, lineal_aprox, multilineal_aprox],
+    )
