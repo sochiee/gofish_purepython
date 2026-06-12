@@ -62,5 +62,5 @@ $$
 Como R es una matriz triangular superior, es un sistema de ecuaciones facil de resolver. 
 
 
-
+Lo demas esta aqui: https://sochiee.github.io/projects/practica_3/
 
