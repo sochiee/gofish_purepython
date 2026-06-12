@@ -1,15 +1,18 @@
 ## Uso
 
-Al correr el `similitud_geometrica.py` se obtienen todos los valores que nos piden en la práctica, no tiene ninguna dependencia. 
+```bash
+python similitud_geometrica.py
+```
+
+Regresa todo lo que nos pide la práctica, no tiene ninguna dependencia. 
 
 
-Para graficar es necesario installar las dependencias: 
+Para graficar es necesario instalar las dependencias y posteriormente correr plot.py: 
 
 ```bash
 pip install -r requirements.txt
+python plot.py
 ```
-
-Y posteriormente correr el archivo `plot.py`.
 
 ## Desarrollo
 
