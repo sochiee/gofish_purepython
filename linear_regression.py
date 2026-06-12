@@ -14,10 +14,7 @@ def olr(data: list[list]) -> list[float]:
         for j in range(m - 1):
             regressors[i].append(data[i][j])
 
-    print(regressors)
     response = [data[i][m - 1] for i in range(n)]
-
-    print(response)
 
     q, r = qr(regressors)
     qt = transpose(q)
