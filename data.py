@@ -25,6 +25,12 @@ def read_csv_rows(path: str) -> list[list]:
         return [[float(elem) for elem in row] for row in reader]
 
 
+def write_csv(path: str, data: list[list]) -> None:
+    with open(path, "w", newline="") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerows(data)
+
+
 if __name__ == "__main__":
     path = "data/pescados.csv"
     data_rows = read_csv_rows(path)
