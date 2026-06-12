@@ -107,10 +107,6 @@ def matrix_to_str(matrix: list[list[float]]) -> str:
 
 
 if __name__ == "__main__":
-    A = [[1, 2], [3, 4], [5, 6]]
-    Q, R = qr(A)
-    print(matrix_to_str(Q))
-    print(matrix_to_str(R))
-
-    check = matmul(Q, R)
-    print(matrix_to_str(check))
+    A = [[1, 4, 7], [2, 5, 8]]
+    q, r = qr(A)
+    print(matrix_to_str(r))
